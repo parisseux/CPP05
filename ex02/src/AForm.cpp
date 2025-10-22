@@ -22,12 +22,12 @@ bool AForm::getSigned() const
 
 int AForm::getgradeSign() const 
 {
-     return (_gradeSign);
+    return (_gradeSign);
 }
 
 int AForm::getgradeExec() const 
 {
-     return (_gradeExec);
+    return (_gradeExec);
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &f)
@@ -45,5 +45,11 @@ void AForm::beSigned(Bureaucrat b)
     }
     else 
         throw GradeTooLowException();
+
+}
+
+void Aform::execute(Bureaucrat const & executor) const
+{
+    
 
 }

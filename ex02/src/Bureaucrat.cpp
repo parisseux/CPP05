@@ -13,7 +13,6 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
-
 std::string Bureaucrat::getName() const 
 {
      return (_name);
@@ -38,7 +37,6 @@ void Bureaucrat::decrementGrade()
         throw GradeTooLowException();
     _grade++;
 }
-
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b)
 {

@@ -21,7 +21,6 @@ public:
     public:
         const char *what() const throw() { return "Grade too high!"; }
     };
-
     class GradeTooLowException : public std::exception
     {
     public:
