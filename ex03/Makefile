@@ -1,8 +1,8 @@
-NAME = aform
+NAME = intern
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra  -std=c++98
 RM = rm -f
-FILES = Bureaucrat.cpp AForm.cpp main.cpp  PresidentialPardonForm.cpp  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+FILES = Bureaucrat.cpp AForm.cpp main.cpp  PresidentialPardonForm.cpp  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp Intern.cpp
 OBJ = $(FILES:.cpp=.o)
 
 all : $(NAME)

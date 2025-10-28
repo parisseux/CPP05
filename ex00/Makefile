@@ -1,36 +1,24 @@
-
 NAME = bureaucrat
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = g++
+CXXFLAGS = -Wall -WError -Wextra  -std=c++98
+RM = rm -f
+FILES = main.cpp Bureaucrat.cpp
+OBJ = $(FILES:.cpp=.o)
 
-SRC_DIR = src
-OBJ_DIR = obj
+all : $(NAME)
 
-SRC = $(wildcard $(SRC_DIR)/*.cpp)
-OBJ = $(patsubst src/%.cpp, obj/%.o, $(SRC))
+$(NAME) : $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-GREEN = \033[0;32m
-BLUE = \033[0;34m
-RESET = \033[0m
+%.o : %.cpp	
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-all: $(NAME)
 
-$(NAME): $(OBJ)
-	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)Compilation succesful!$(RESET)"
+clean :
+	$(RM) $(OBJ)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(OBJ_DIR)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
-
-clean:
-	@rm -f $(OBJ)
-	@rmdir $(OBJ_DIR) 2>/dev/null || true
-
-fclean: clean
-	@rm -f $(NAME)
-	@echo "$(BLUE)Cleaning succesful!$(RESET)"
-
-re: fclean all
+fclean : clean
+	$(RM) $(NAME)
 
 .PHONY: all clean fclean re
+
