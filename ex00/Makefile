@@ -1,6 +1,6 @@
 NAME = bureaucrat
 CXX = g++
-CXXFLAGS = -Wall -WError -Wextra  -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra  -std=c++98
 RM = rm -f
 FILES = main.cpp Bureaucrat.cpp
 OBJ = $(FILES:.cpp=.o)
